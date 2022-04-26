@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: bee_dice
+    databaseName: bee_dice
+    user: bee_dice
 
 services:
   - type: web
-    name: mysite
+    name: bee_dice
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn bee_dice.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: bee_dice
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
