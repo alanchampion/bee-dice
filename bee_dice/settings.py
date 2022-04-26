@@ -80,21 +80,27 @@ WSGI_APPLICATION = 'bee_dice.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {}
-if (DEBUG):
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-else:
-    DATABASES = {
-        'default': dj_database_url.config (
-            default='postgresql://postgres:postgres@localhost:5432/bee_dice',
-            conn_max_age=600,
-         )
-    }
+}
+# DATABASES = {}
+# if (DEBUG):
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': dj_database_url.config (
+#             default='postgresql://postgres:postgres@localhost:5432/bee_dice',
+#             conn_max_age=600,
+#          )
+#     }
 
 
 # Password validation
